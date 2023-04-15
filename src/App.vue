@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer app v-model="drawer">
+  <v-navigation-drawer app v-model="drawer">
   <v-list-item>
   <v-list-item-content>
   <v-list-item-title class="title">
@@ -18,42 +18,49 @@
   :key="link.title"
   >
   <template v-slot:prepend>
-  <v-icon :icon="link.icon"></v-icon>
-  </template>
-  <v-list-item-title>{{ link.title }}</v-list-item-title>
-  </v-list-item>
-  </v-list>
-  </v-navigation-drawer>
-  <v-app-bar app dark color="primary">
-  <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-  <v-spacer></v-spacer>
-  <v-toolbar-items class="hidden-sm-and-down">
-  <v-btn
-  text
-  v-for="link in links"
-  :key="link.title"
-  >
-  <v-icon
-  start
-  :icon="link.icon"
-  ></v-icon>
-  {{ link.title }}
-  </v-btn>
-  </v-toolbar-items>
-  </v-app-bar>
-  <v-main>
-  </v-main>
-  </v-app>
+    <v-icon :icon="link.icon"></v-icon>
+</template>
+<v-list-item-title>{{ link.title }}</v-list-item-title>
+</v-list-item>
+</v-list>
+</v-navigation-drawer>
+<v-app-bar app dark color="primary">
+<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+<v-spacer></v-spacer>
+<v-toolbar-items class="hidden-sm-and-down">
+<v-btn
+text
+v-for="link in links"
+:key="link.title"
+>
+<v-icon
+start
+:icon="link.icon"
+></v-icon>
+{{ link.title }}
+</v-btn>
+</v-toolbar-items>
+</v-app-bar>
+<v-main>
+</v-main>
+</v-app>
 </template>
 
 
 <script>
 export default {
 data() {
-    return {
-      drawer: false
-    }
-  }
+return {
+  drawer: false,
+links: [
+{title:"Login", icon:"mdi-lock", url:"/login"},
+{title:"Registration",icon:"mdi-face",url:"/registration"},
+{title:"Orders",icon:"mdi-bookmark-multiple-outline", url:"/orders"},
+{title:"New ad", icon:"mdi-note-plus-outline", url:"/new"},
+{title:"My ads", icon:"mdi-view-list-outline", url:"/list"}
+]
+}
+}
 }
 
 </script>
