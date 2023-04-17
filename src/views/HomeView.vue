@@ -93,7 +93,7 @@ export default {
 </script>
 <style scoped>
 	.ad-link {
-		position:absolute;
+		position: absolute;
 		bottom: 50px;
 		left:50%;
 		background: rgb(0,0,0,0.5);
