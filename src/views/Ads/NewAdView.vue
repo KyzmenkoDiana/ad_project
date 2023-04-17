@@ -33,7 +33,19 @@ export default {
         title: "",
         description: "",
         promo: false,
-    };
+    } 	
 },
-};
+methods: {
+    createAd(){
+if (this.$refs.form.validate()){
+	const ad = {
+		title: this.title,
+		desc: this.description,
+		promo: this.promo
+	}
+	console.log(ad)
+	}
+}
+}
+}
 </script>
